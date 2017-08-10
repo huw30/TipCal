@@ -46,7 +46,9 @@ class ViewController: UIViewController, Delegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         initValues()
+
         // Do any additional setup after loading the view, typically from a nib.
+        view.setGradiantBackground(colorOne: Colors.brightOrange, colorTwo: Colors.white)
     }
 
     override func didReceiveMemoryWarning() {
