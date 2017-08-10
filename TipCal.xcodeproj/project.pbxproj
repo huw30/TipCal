@@ -16,7 +16,6 @@
 		B719958F1F39631A00C6EB0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B719958D1F39631A00C6EB0C /* LaunchScreen.storyboard */; };
 		B719959A1F39631A00C6EB0C /* TipCalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71995991F39631A00C6EB0C /* TipCalTests.swift */; };
 		B71995A51F397A9100C6EB0C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71995A41F397A9100C6EB0C /* SettingsViewController.swift */; };
-		B7EAD9AD1F3C2CAC00A1ACC5 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EAD9AC1F3C2CAC00A1ACC5 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +44,6 @@
 		B71995991F39631A00C6EB0C /* TipCalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalTests.swift; sourceTree = "<group>"; };
 		B719959B1F39631A00C6EB0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B71995A41F397A9100C6EB0C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		B7EAD9AC1F3C2CAC00A1ACC5 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		FF8C45B2EB75F49A93FB819F /* Pods-TipCal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipCal.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipCal/Pods-TipCal.release.xcconfig"; sourceTree = "<group>"; };
 		FFBABD8E8CF44F20BAFF2F85 /* Pods-TipCal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipCal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TipCal/Pods-TipCal.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,7 +118,6 @@
 				B719958D1F39631A00C6EB0C /* LaunchScreen.storyboard */,
 				B71995901F39631A00C6EB0C /* Info.plist */,
 				B71995A41F397A9100C6EB0C /* SettingsViewController.swift */,
-				B7EAD9AC1F3C2CAC00A1ACC5 /* Helper.swift */,
 			);
 			path = TipCal;
 			sourceTree = "<group>";
@@ -348,7 +345,6 @@
 				B71995871F39631A00C6EB0C /* ViewController.swift in Sources */,
 				B71995851F39631A00C6EB0C /* AppDelegate.swift in Sources */,
 				B71995A51F397A9100C6EB0C /* SettingsViewController.swift in Sources */,
-				B7EAD9AD1F3C2CAC00A1ACC5 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
