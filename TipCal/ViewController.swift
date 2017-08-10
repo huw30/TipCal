@@ -7,8 +7,6 @@
 //
 
 import UIKit
-
-
 import Foundation
 
 extension Double {
@@ -47,6 +45,14 @@ class ViewController: UIViewController, Delegate {
         super.viewDidLoad()
         initValues()
         // Do any additional setup after loading the view, typically from a nib.
+//        Helper.applyGradient(self)
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.frame
+        gradientLayer.colors = [UIColor.red.cgColor, UIColor.blue.cgColor, UIColor(red: 124/255.5, green: 14/255.5, blue: 54/255.5, alpha: 1.0).cgColor]
+        gradientLayer.locations = [0.0, 0.5, 1.0]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.0)
+        self.view.layer.addSublayer(gradientLayer)
     }
 
     override func didReceiveMemoryWarning() {
