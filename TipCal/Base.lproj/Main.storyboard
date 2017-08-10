@@ -67,21 +67,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IkG-ud-N4B">
-                                <rect key="frame" x="164" y="385" width="46" height="30"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="JfO-fv-bkV">
+                                <rect key="frame" x="50" y="434" width="241" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5ay-H2-lTV">
-                                <rect key="frame" x="270" y="385" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tkP-iR-MAo">
-                                <rect key="frame" x="34" y="385" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                                <segments>
+                                    <segment title="Excelent"/>
+                                    <segment title="Satisfied"/>
+                                    <segment title="Terrible"/>
+                                </segments>
+                                <connections>
+                                    <action selector="calculateTotal:" destination="BYZ-38-t0r" eventType="valueChanged" id="R0m-nE-cwA"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -98,6 +95,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="billField" destination="BdA-Ht-3UU" id="Eej-do-BWl"/>
+                        <outlet property="segmentControl" destination="JfO-fv-bkV" id="2FR-mv-GZx"/>
                         <outlet property="tipLabel" destination="0y7-JX-na7" id="vBw-L5-ZGZ"/>
                         <outlet property="totalLabel" destination="GGU-Cu-s75" id="uEK-07-j4q"/>
                     </connections>
@@ -147,10 +145,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="I0J-FQ-TnS">
-                                <rect key="frame" x="306" y="230" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Round up total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zsx-nb-3qT">
                                 <rect key="frame" x="43" y="273" width="112" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -161,60 +155,84 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="qhO-xn-tCi">
                                 <rect key="frame" x="306" y="279" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onTotalRoundUpControlChange:" destination="clk-yv-tZ8" eventType="valueChanged" id="PYl-Ct-ZLa"/>
+                                </connections>
                             </switch>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" maximumValue="100" id="56O-Gu-gYl">
-                                <rect key="frame" x="261" y="93" width="94" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="excellentStepper:" destination="clk-yv-tZ8" eventType="valueChanged" id="gnz-FQ-KVd"/>
-                                </connections>
-                            </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="18" maximumValue="100" id="xH0-xb-4rW">
-                                <rect key="frame" x="261" y="130" width="94" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="satisfStepper:" destination="clk-yv-tZ8" eventType="valueChanged" id="IVn-sp-2BB"/>
-                                </connections>
-                            </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" maximumValue="100" id="7ps-ob-e1U">
-                                <rect key="frame" x="261" y="181" width="94" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="terribleStepper:" destination="clk-yv-tZ8" eventType="valueChanged" id="dse-Bg-c37"/>
-                                </connections>
-                            </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="20%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2lG-Py-bjH">
-                                <rect key="frame" x="219" y="97" width="34" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="20%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fEy-iS-5bf">
+                                <rect key="frame" x="250" y="87" width="44" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="18%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MIP-jA-Vek">
-                                <rect key="frame" x="218" y="124" width="37" height="41"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eT4-GJ-NAI">
+                                <rect key="frame" x="196" y="87" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VsF-CE-3VM">
+                                <rect key="frame" x="309" y="87" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="18%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Uba-vn-bpV">
+                                <rect key="frame" x="250" y="125" width="44" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="15%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FQS-DL-7yB">
-                                <rect key="frame" x="216" y="175" width="41" height="41"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sNH-94-k1g">
+                                <rect key="frame" x="196" y="125" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="McB-4t-Mo7">
+                                <rect key="frame" x="309" y="125" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="15%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iaA-fh-J1M">
+                                <rect key="frame" x="249" y="181" width="44" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0dU-rO-f7l">
+                                <rect key="frame" x="196" y="181" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ccp-Wg-zSD">
+                                <rect key="frame" x="308" y="181" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="I0J-FQ-TnS">
+                                <rect key="frame" x="308" y="227" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onTipRoundUpControlChange:" destination="clk-yv-tZ8" eventType="valueChanged" id="skb-9H-gJg"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="SsR-iI-yhB"/>
                     <connections>
-                        <outlet property="exStepper" destination="56O-Gu-gYl" id="2JS-A8-6i7"/>
-                        <outlet property="excellentLabel" destination="2lG-Py-bjH" id="RYI-vY-K6R"/>
-                        <outlet property="saStepper" destination="xH0-xb-4rW" id="ytg-5y-N3I"/>
-                        <outlet property="satisfLabel" destination="MIP-jA-Vek" id="nLH-mJ-A2T"/>
-                        <outlet property="teStepper" destination="7ps-ob-e1U" id="Kn1-1v-09H"/>
-                        <outlet property="terribleLabel" destination="FQS-DL-7yB" id="qMK-Ea-h5R"/>
+                        <outlet property="eCountLabel" destination="fEy-iS-5bf" id="9Z5-uo-7Ou"/>
+                        <outlet property="eDecrementButton" destination="eT4-GJ-NAI" id="Xaj-3N-k4J"/>
+                        <outlet property="eIncrementButton" destination="VsF-CE-3VM" id="xTl-cr-4Lw"/>
+                        <outlet property="sCountLabel" destination="Uba-vn-bpV" id="fMd-HL-mYP"/>
+                        <outlet property="sDecrementButton" destination="sNH-94-k1g" id="4JR-lk-c96"/>
+                        <outlet property="sIncrementButton" destination="McB-4t-Mo7" id="43X-Kj-meA"/>
+                        <outlet property="tCountLabel" destination="iaA-fh-J1M" id="YIZ-Il-oeN"/>
+                        <outlet property="tDecrementButton" destination="0dU-rO-f7l" id="hjK-3a-wzy"/>
+                        <outlet property="tIncrementButton" destination="ccp-Wg-zSD" id="aSJ-ER-PRY"/>
+                        <outlet property="tipRoundUpControl" destination="I0J-FQ-TnS" id="l9M-r3-KdR"/>
+                        <outlet property="totalRoundUpControl" destination="qhO-xn-tCi" id="eK8-QE-1yj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05l-6d-IMo" userLabel="First Responder" sceneMemberID="firstResponder"/>

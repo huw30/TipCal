@@ -6,6 +6,7 @@ target 'TipCal' do
   use_frameworks!
 
   # Pods for TipCal
+  pod 'KWStepper'
 
   target 'TipCalTests' do
     inherit! :search_paths
