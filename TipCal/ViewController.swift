@@ -49,7 +49,17 @@ class ViewController: UIViewController, Delegate {
         initValues()
 
         // Do any additional setup after loading the view, typically from a nib.
-        view.setGradiantBackground(colorOne: Colors.brightOrange, colorTwo: Colors.white)
+        view.setGradiantBackground(colorOne: Colors.pink, colorTwo: Colors.babyBlue)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+
+        let rect = CGRect(origin: segmentControl.frame.origin, size: CGSize(width: segmentControl.frame.size.width, height: 100))
+        segmentControl.frame = rect
+        segmentControl.layer.cornerRadius = 15.0
+        segmentControl.layer.borderWidth = 1.0
+        segmentControl.layer.borderColor = Colors.white.cgColor
+        segmentControl.layer.masksToBounds = true
     }
 
     override func didReceiveMemoryWarning() {

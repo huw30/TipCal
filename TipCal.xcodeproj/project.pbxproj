@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		427DAEE22ED08C4FA4EF0FA6 /* Pods_TipCal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288F722C1933491B9B2B24D4 /* Pods_TipCal.framework */; };
 		6D6AB5F5817A55FD07F21261 /* Pods_TipCalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E391557EDE3E5963548F301 /* Pods_TipCalTests.framework */; };
+		B71916841F3D6FBC00624533 /* Lumberjack-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B71916831F3D6F3E00624533 /* Lumberjack-Regular.ttf */; };
+		B71916861F3D745B00624533 /* Adequate-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B71916851F3D743D00624533 /* Adequate-ExtraLight.ttf */; };
 		B71995851F39631A00C6EB0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71995841F39631A00C6EB0C /* AppDelegate.swift */; };
 		B71995871F39631A00C6EB0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71995861F39631A00C6EB0C /* ViewController.swift */; };
 		B719958A1F39631A00C6EB0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71995881F39631A00C6EB0C /* Main.storyboard */; };
@@ -35,6 +37,9 @@
 		6E391557EDE3E5963548F301 /* Pods_TipCalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipCalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97DF2AA12E0533653B59ACCF /* Pods-TipCalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipCalTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TipCalTests/Pods-TipCalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0E09361080673B4F46B5E04 /* Pods-TipCalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipCalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipCalTests/Pods-TipCalTests.release.xcconfig"; sourceTree = "<group>"; };
+		B71916821F3D6F3E00624533 /* Carre.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Carre.otf; path = ../../../Desktop/Carre.otf; sourceTree = "<group>"; };
+		B71916831F3D6F3E00624533 /* Lumberjack-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lumberjack-Regular.ttf"; path = "../../../Desktop/Lumberjack-Regular.ttf"; sourceTree = "<group>"; };
+		B71916851F3D743D00624533 /* Adequate-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Adequate-ExtraLight.ttf"; path = "../../../Desktop/Adequate-ExtraLight.ttf"; sourceTree = "<group>"; };
 		B71995811F39631A00C6EB0C /* TipCal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipCal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B71995841F39631A00C6EB0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B71995861F39631A00C6EB0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +97,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B71916811F3D6EE100624533 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B71916851F3D743D00624533 /* Adequate-ExtraLight.ttf */,
+				B71916821F3D6F3E00624533 /* Carre.otf */,
+				B71916831F3D6F3E00624533 /* Lumberjack-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		B71995781F39631A00C6EB0C = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +130,7 @@
 		B71995831F39631A00C6EB0C /* TipCal */ = {
 			isa = PBXGroup;
 			children = (
+				B71916811F3D6EE100624533 /* Fonts */,
 				B71995841F39631A00C6EB0C /* AppDelegate.swift */,
 				B71995861F39631A00C6EB0C /* ViewController.swift */,
 				B71995881F39631A00C6EB0C /* Main.storyboard */,
@@ -226,6 +242,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B71916861F3D745B00624533 /* Adequate-ExtraLight.ttf in Resources */,
+				B71916841F3D6FBC00624533 /* Lumberjack-Regular.ttf in Resources */,
 				B719958F1F39631A00C6EB0C /* LaunchScreen.storyboard in Resources */,
 				B719958C1F39631A00C6EB0C /* Assets.xcassets in Resources */,
 				B719958A1F39631A00C6EB0C /* Main.storyboard in Resources */,
