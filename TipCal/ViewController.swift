@@ -26,6 +26,7 @@ class ViewController: UIViewController, Delegate {
     func initValues() {
         initTipPercentages()
         initRoundUps()
+        calculateTotal((Any).self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -87,8 +88,8 @@ class ViewController: UIViewController, Delegate {
         let defaults = UserDefaults.standard
 
         let exVal = convertToPercentage(val: defaults.value(forKey: "excellentStepperValue") as? Double ?? 20)
-        let saVal = convertToPercentage(val:defaults.value(forKey: "satisfactoryStepper") as? Double ?? 18)
-        let teVal = convertToPercentage(val:defaults.value(forKey: "terribleStepper") as? Double ?? 15)
+        let saVal = convertToPercentage(val:defaults.value(forKey: "satisfactoryStepperValue") as? Double ?? 18)
+        let teVal = convertToPercentage(val:defaults.value(forKey: "terribleStepperValue") as? Double ?? 15)
 
         tipPercentages = [exVal, saVal, teVal]
     }

@@ -93,20 +93,13 @@ class SettingsViewController: UIViewController {
         let defaults = UserDefaults.standard
 
         excellentStepper.value = defaults.value(forKey: "excellentStepperValue") as? Double ?? 20
-        satisfactoryStepper.value = defaults.value(forKey: "satisfactoryStepper") as? Double ?? 18
-        terribleStepper.value = defaults.value(forKey: "terribleStepper") as? Double ?? 15
+        satisfactoryStepper.value = defaults.value(forKey: "satisfactoryStepperValue") as? Double ?? 18
+        terribleStepper.value = defaults.value(forKey: "terribleStepperValue") as? Double ?? 15
     }
     func saveStepperValues() {
         let defaults = UserDefaults.standard
 
         defaults.setValue(excellentStepper.value, forKey: "excellentStepperValue")
-        defaults.setValue(satisfactoryStepper.value, forKey: "satisfactoryStepperValue")
-        defaults.setValue(terribleStepper.value, forKey: "terribleStepperValue")
-    }
-    func saveRoundUp() {
-        let defaults = UserDefaults.standard
-
-        defaults.setValue(1, forKey: "excellentStepperValue")
         defaults.setValue(satisfactoryStepper.value, forKey: "satisfactoryStepperValue")
         defaults.setValue(terribleStepper.value, forKey: "terribleStepperValue")
     }
