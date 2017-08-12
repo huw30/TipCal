@@ -44,6 +44,10 @@ class SettingsViewController: UIViewController {
         initTStepper()
         initStepperValues()
         initRoundUps()
+        
+        //UI changes
+        view.setGradiantBackground(colorOne: Colors.babyPurple, colorTwo: Colors.lightGrey)
+        self.removeNavBar()
     }
 
     override func didReceiveMemoryWarning() {

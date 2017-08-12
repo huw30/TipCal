@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 import Foundation
 
 extension Double {
@@ -49,17 +48,10 @@ class ViewController: UIViewController, Delegate {
         initValues()
 
         // Do any additional setup after loading the view, typically from a nib.
+        // UI changes
         view.setGradiantBackground(colorOne: Colors.pink, colorTwo: Colors.babyBlue)
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-
-        let rect = CGRect(origin: segmentControl.frame.origin, size: CGSize(width: segmentControl.frame.size.width, height: 100))
-        segmentControl.frame = rect
-        segmentControl.layer.cornerRadius = 15.0
-        segmentControl.layer.borderWidth = 1.0
-        segmentControl.layer.borderColor = Colors.white.cgColor
-        segmentControl.layer.masksToBounds = true
+        self.removeNavBar()
+        changeSegmentControlUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -106,5 +98,14 @@ class ViewController: UIViewController, Delegate {
 
     func convertToPercentage(val: Double) -> Double{
         return (val/100).roundToDecimal(2)
+    }
+    
+    func changeSegmentControlUI() {
+        let rect = CGRect(origin: segmentControl.frame.origin, size: CGSize(width: segmentControl.frame.size.width, height: 100))
+        segmentControl.frame = rect
+        segmentControl.layer.cornerRadius = 15.0
+        segmentControl.layer.borderWidth = 1.0
+        segmentControl.layer.borderColor = Colors.white.cgColor
+        segmentControl.layer.masksToBounds = true
     }
 }
