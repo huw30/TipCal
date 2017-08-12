@@ -52,6 +52,7 @@ class ViewController: UIViewController, Delegate {
         view.setGradiantBackground(colorOne: Colors.pink, colorTwo: Colors.babyBlue)
         self.removeNavBar()
         changeSegmentControlUI()
+        self.billField.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
