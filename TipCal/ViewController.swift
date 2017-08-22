@@ -25,6 +25,9 @@ class ViewController: UIViewController, Delegate {
     func initValues() {
         initTipPercentages()
         initRoundUps()
+        initUseLocalCurrency()
+        determineCurrency()
+        initPlaceholders()
         calculateTotal((Any).self)
     }
 
@@ -42,6 +45,8 @@ class ViewController: UIViewController, Delegate {
     var tipPercentages = [0.15, 0.18, 0.2];
     var tipRoundUp = false;
     var totalRoundUp = false;
+    var localCurrencySymbol = "$"
+    var isLocalCurrency = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +55,8 @@ class ViewController: UIViewController, Delegate {
         // Do any additional setup after loading the view, typically from a nib.
         // UI changes
         view.setGradiantBackground(colorOne: Colors.pink, colorTwo: Colors.babyBlue)
-        self.removeNavBar()
         changeSegmentControlUI()
+        self.removeNavBar()
         self.billField.becomeFirstResponder()
     }
 
@@ -77,14 +82,26 @@ class ViewController: UIViewController, Delegate {
             total = total.rounded()
         }
 
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
+        tipLabel.text = String(format: localCurrencySymbol+"%.2f", tip)
+        totalLabel.text = String(format: localCurrencySymbol+"%.2f", total)
     }
 
     func initRoundUps() {
         let defaults = UserDefaults.standard
         tipRoundUp = defaults.value(forKey: "tipRoundUp") as? Bool ?? false
         totalRoundUp = defaults.value(forKey: "totalRoundUp") as? Bool ?? false
+    }
+    
+    func initUseLocalCurrency() {
+        let defaults = UserDefaults.standard
+        isLocalCurrency = defaults.value(forKey: "isLocalCurrency") as? Bool ?? false
+        print(isLocalCurrency)
+    }
+    
+    func initPlaceholders() {
+        billField.placeholder = localCurrencySymbol
+        tipLabel.text = localCurrencySymbol + "0.00"
+        totalLabel.text = localCurrencySymbol + "0.00"
     }
 
     func initTipPercentages() {
@@ -108,5 +125,14 @@ class ViewController: UIViewController, Delegate {
         segmentControl.layer.borderWidth = 1.0
         segmentControl.layer.borderColor = Colors.white.cgColor
         segmentControl.layer.masksToBounds = true
+    }
+
+    func determineCurrency() {
+        if (isLocalCurrency) {
+            let locale = Locale.current
+            localCurrencySymbol = locale.currencySymbol!
+        } else {
+            localCurrencySymbol = "$"
+        }
     }
 }

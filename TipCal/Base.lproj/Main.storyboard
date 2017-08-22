@@ -54,7 +54,7 @@
                                     <action selector="calculateTotal:" destination="BYZ-38-t0r" eventType="editingChanged" id="b17-t0-IZ6"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GGU-Cu-s75">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GGU-Cu-s75">
                                 <rect key="frame" x="194" y="405" width="170" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Adequate-ExtraLight" family="Adequate" pointSize="17"/>
@@ -236,6 +236,22 @@
                                     <action selector="onTipRoundUpControlChange:" destination="clk-yv-tZ8" eventType="valueChanged" id="skb-9H-gJg"/>
                                 </connections>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Use Local Currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uQ8-eg-ohW">
+                                <rect key="frame" x="20" y="327" width="233" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Adequate-ExtraLight" family="Adequate" pointSize="18"/>
+                                <color key="textColor" red="0.0099126864219999996" green="0.11340212080000001" blue="0.26718285679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="UbP-Cd-7Jc">
+                                <rect key="frame" x="310" y="332" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="onTintColor" red="0.13685935739999999" green="0.13498765230000001" blue="0.23031932120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="onLocalCurrencyControlChange:" destination="clk-yv-tZ8" eventType="valueChanged" id="ZNl-nQ-TiF"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -244,6 +260,7 @@
                         <outlet property="eCountLabel" destination="fEy-iS-5bf" id="9Z5-uo-7Ou"/>
                         <outlet property="eDecrementButton" destination="eT4-GJ-NAI" id="Xaj-3N-k4J"/>
                         <outlet property="eIncrementButton" destination="VsF-CE-3VM" id="xTl-cr-4Lw"/>
+                        <outlet property="localCurrencyControl" destination="UbP-Cd-7Jc" id="8Di-eH-HKs"/>
                         <outlet property="sCountLabel" destination="Uba-vn-bpV" id="fMd-HL-mYP"/>
                         <outlet property="sDecrementButton" destination="sNH-94-k1g" id="4JR-lk-c96"/>
                         <outlet property="sIncrementButton" destination="McB-4t-Mo7" id="43X-Kj-meA"/>

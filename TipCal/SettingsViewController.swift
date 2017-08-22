@@ -35,6 +35,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var tipRoundUpControl: UISwitch!
     @IBOutlet weak var totalRoundUpControl: UISwitch!
 
+    @IBOutlet weak var localCurrencyControl: UISwitch!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,6 +46,7 @@ class SettingsViewController: UIViewController {
         initTStepper()
         initStepperValues()
         initRoundUps()
+        initUseLocalCurrency()
         
         //UI changes
         view.setGradiantBackground(colorOne: Colors.babyPurple, colorTwo: Colors.lightGrey)
@@ -123,5 +126,16 @@ class SettingsViewController: UIViewController {
     @IBAction func onTotalRoundUpControlChange(_ sender: Any) {
         let defaults = UserDefaults.standard
         defaults.setValue(totalRoundUpControl.isOn, forKey: "totalRoundUp")
+    }
+    
+    @IBAction func onLocalCurrencyControlChange(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        defaults.setValue(localCurrencyControl.isOn, forKey: "isLocalCurrency")
+    }
+    
+    func initUseLocalCurrency() {
+        let defaults = UserDefaults.standard
+        let isLocalCurrency = defaults.value(forKey: "isLocalCurrency") as? Bool ?? false
+        localCurrencyControl.setOn(isLocalCurrency, animated: true)
     }
 }
