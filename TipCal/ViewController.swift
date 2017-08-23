@@ -27,6 +27,7 @@ class ViewController: UIViewController, Delegate {
         initRoundUps()
         initUseLocalCurrency()
         determineCurrency()
+        initFormatter()
         initPlaceholders()
         calculateTotal((Any).self)
     }
@@ -59,11 +60,6 @@ class ViewController: UIViewController, Delegate {
         changeSegmentControlUI()
         self.removeNavBar()
         self.billField.becomeFirstResponder()
-        formatter.locale = Locale.current
-        formatter.numberStyle = NumberFormatter.Style.decimal
-        formatter.usesGroupingSeparator = true
-        formatter.minimumFractionDigits = 2
-        formatter.maximumFractionDigits = 2
     }
 
     override func didReceiveMemoryWarning() {
@@ -137,5 +133,16 @@ class ViewController: UIViewController, Delegate {
         } else {
             localCurrencySymbol = "$"
         }
+    }
+    func initFormatter() {
+        if (isLocalCurrency) {
+            formatter.locale = Locale.current
+            formatter.usesGroupingSeparator = true
+        } else {
+            formatter.locale = Locale.init(identifier: "en_US")
+        }
+        formatter.numberStyle = NumberFormatter.Style.decimal
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
     }
 }
