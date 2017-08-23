@@ -28,7 +28,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](https://user-images.githubusercontent.com/5446130/29600204-678f7e2c-8789-11e7-91b7-73841a74000b.gif)
+![Video Walkthrough](https://user-images.githubusercontent.com/5446130/29601236-50c200d8-878f-11e7-9583-6c3f93ea81ec.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
