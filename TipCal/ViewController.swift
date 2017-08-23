@@ -16,6 +16,21 @@ extension Double {
         return Darwin.round(self * multiplier) / multiplier
     }
 }
+extension String {
+    var doubleValue: Double {
+        let nf = NumberFormatter()
+        nf.decimalSeparator = "."
+        if let result = nf.number(from: self) {
+            return result.doubleValue
+        } else {
+            nf.decimalSeparator = ","
+            if let result = nf.number(from: self) {
+                return result.doubleValue
+            }
+        }
+        return 0
+    }
+}
 
 protocol Delegate: class {
     func initValues()
@@ -72,14 +87,14 @@ class ViewController: UIViewController, Delegate {
     }
 
     @IBAction func calculateTotal(_ sender: Any) {
-        let bill = Double(billField.text!) ?? 0
+        let bill = billField.text?.doubleValue
 
-        var tip = bill * tipPercentages[segmentControl.selectedSegmentIndex]
+        var tip = bill! * tipPercentages[segmentControl.selectedSegmentIndex]
         if (tipRoundUp) {
             tip = tip.rounded()
         }
         
-        var total = bill + tip
+        var total = bill! + tip
         if (totalRoundUp) {
             total = total.rounded()
         }
