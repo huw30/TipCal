@@ -47,6 +47,7 @@ class ViewController: UIViewController, Delegate {
     var totalRoundUp = false;
     var localCurrencySymbol = "$"
     var isLocalCurrency = false
+    var formatter = NumberFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,11 @@ class ViewController: UIViewController, Delegate {
         changeSegmentControlUI()
         self.removeNavBar()
         self.billField.becomeFirstResponder()
+        formatter.locale = Locale.current
+        formatter.numberStyle = NumberFormatter.Style.decimal
+        formatter.usesGroupingSeparator = true
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,8 +88,8 @@ class ViewController: UIViewController, Delegate {
             total = total.rounded()
         }
 
-        tipLabel.text = String(format: localCurrencySymbol+"%.2f", tip)
-        totalLabel.text = String(format: localCurrencySymbol+"%.2f", total)
+        tipLabel.text = localCurrencySymbol + formatter.string(for: tip)!
+        totalLabel.text = localCurrencySymbol + formatter.string(for: total)!
     }
 
     func initRoundUps() {
@@ -95,13 +101,10 @@ class ViewController: UIViewController, Delegate {
     func initUseLocalCurrency() {
         let defaults = UserDefaults.standard
         isLocalCurrency = defaults.value(forKey: "isLocalCurrency") as? Bool ?? false
-        print(isLocalCurrency)
     }
     
     func initPlaceholders() {
         billField.placeholder = localCurrencySymbol
-        tipLabel.text = localCurrencySymbol + "0.00"
-        totalLabel.text = localCurrencySymbol + "0.00"
     }
 
     func initTipPercentages() {
